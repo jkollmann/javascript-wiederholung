@@ -21,8 +21,15 @@ console.log(jazzify(["G", "F", "C"]))
 
 // Schreibe die Funktion mit array.forEach()
 function jazzifyWithForEach(chords) {
+    const newArray = [];
+    chords.forEach(item => {
+        newArray.push(item.concat("7"));
+    })
+    return newArray;
+};
 
-}
+console.log(jazzifyWithForEach(["Dm", "G", "E", "A"]));
+
 
 // Schreibe die Funktion mit einem for loop
 function jazzifyWithFor(chords) {
