@@ -18,13 +18,31 @@ function App() {
 
   useEffect(() => {
     fetch(`https://pokeapi.co/api/v2/pokemon?limit=10&offset=${offset}`)
+      .then((res) => {
+        console.log(res);
+        return res.json()
+      })
+      .then((data) => {
+        setPokemonList(data.results);
+        console.log(data)
+        console.log(data.results)
+      });
   }, []);
 
-  return (<div>
-    <div>{pokemonList.map((item, i) => <p key={i}>{item.name}</p>)}</div>
-    <button>Show more</button>
-    <input type="text" placeholder="search"></input>
-  </div>);
+  function getValue() {
+
+  }
+
+
+  // Ab hier JSX
+  return (
+    <div>
+      <div>
+        {pokemonList.map((item, index) => <p key={index}>{item.name}</p>)}
+      </div>
+      <button>Show more</button>
+      <input type="text" placeholder="search"></input>
+    </div>);
 }
 
 export default App;
