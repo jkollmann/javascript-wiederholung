@@ -56,13 +56,31 @@ console.log(jazzifyWithFor(["G", "F", "C", "H", "A", "D"]));
 
 // Schreibe zunächst eine Funktion die den Anfangsbuchstaben eines Wortes groß schreibt
 function capitalizeWord(word) {
+    let G = word.slice(0, 1).toUpperCase();
+    let W = word.slice(1, word.length);
+
+    return G + W;
+
 
 }
+console.log(capitalizeWord("title"));
+
 
 // Schreibe die Funktion für einen Satz mit einem for-of loop, nutze capitalizeWord
 function capitalizeSentence(sentence) {
+    let newArray = sentence.split(" ");
+    console.log(newArray);
+    let MapArray = newArray.map((item) => {
+        return capitalizeWord(item);
+    }
+    );
+    console.log(MapArray);
+    return MapArray.join(' ');
+
 
 }
+
+console.log(capitalizeSentence("capitalize every word"));
 
 // Schreibe die Funktion mit einem while loop, nutze wieder capitalizeWord
 function capitalizeWithWhile(sentence) {
