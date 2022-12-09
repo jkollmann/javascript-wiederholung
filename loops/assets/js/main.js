@@ -14,20 +14,30 @@
 // Benutze dazu die array.map() Funktion
 function jazzify(chords) {
     return chords.map(item => {
-        return item.concat("7")
-    })
+        return item.concat("7");
+    });
 };
-console.log(jazzify(["G", "F", "C"]))
+console.log(jazzify(["G", "F", "C"]));
 
 // Schreibe die Funktion mit array.forEach()
 function jazzifyWithForEach(chords) {
-
+    const newArray = [];
+    chords.forEach(item => {
+        newArray.push(item.concat("7"));
+    });
+    return newArray;
 }
+console.log(jazzifyWithForEach(["G", "F", "C"]));
 
 // Schreibe die Funktion mit einem for loop
 function jazzifyWithFor(chords) {
-
+    const JazzifiedArray = [];
+    for (let i = 0; i < chords.length; i++) {
+        JazzifiedArray.push(chords[i].concat("7"));
+    }
+    return JazzifiedArray;
 }
+console.log(jazzifyWithFor(["G", "F", "C", "H", "A", "D"]));
 
 // ======================================================================================
 
