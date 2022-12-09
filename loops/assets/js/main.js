@@ -26,8 +26,10 @@ function jazzifyWithForEach(chords) {
         newArray.push(item.concat("7"));
     });
     return newArray;
-}
-console.log(jazzifyWithForEach(["G", "F", "C"]));
+};
+
+console.log(jazzifyWithForEach(["Dm", "G", "E", "A"]));
+
 
 // Schreibe die Funktion mit einem for loop
 function jazzifyWithFor(chords) {
