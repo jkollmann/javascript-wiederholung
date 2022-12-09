@@ -13,8 +13,11 @@
 
 // Benutze dazu die array.map() Funktion
 function jazzify(chords) {
-
-}
+    return chords.map(item => {
+        return item.concat("7")
+    })
+};
+console.log(jazzify(["G", "F", "C"]))
 
 // Schreibe die Funktion mit array.forEach()
 function jazzifyWithForEach(chords) {
